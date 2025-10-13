@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="/register.css" />
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+  <div class="register-wrapper">
+    <div class="register-container">
+      <h1 class="register-title">Create Account</h1>
+
+      <form action="/register" method="POST" class="register-form">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required />
+
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required />
+
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required />
+
+
+        <button type="submit" class="form-btn">Register</button>
+      </form>
+<% if(errors){ %>
+  <p class="err"> <%=errors%> </p>
+<% } %>
+      <p class="register-footer">
+        Already have an account? <a href="/login" class="footer-link">Login</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

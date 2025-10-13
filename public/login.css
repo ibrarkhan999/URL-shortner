@@ -1,0 +1,111 @@
+/* Wrapper centers the login box */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login box */
+.login-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+/* Titles */
+.login-title {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.login-subtitle {
+  margin-bottom: 25px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-label {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+.form-input:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 6px rgba(26,188,156,0.5);
+}
+
+/* Button */
+.form-btn {
+  background: #1abc9c;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.form-btn:hover {
+  background: #16a085;
+  box-shadow: 0 4px 12px rgba(26,188,156,0.4);
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-link {
+  color: #1abc9c;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.err{
+  color: red;
+  font-weight: 500;
+  padding: 5px;
+}
+
+
+.forgotp{
+  text-decoration: none;
+  margin-top: 10px;
+  color: rgb(129, 138, 9);
+
+}
+
+.forg{
+  display: flex;
+  justify-content: center;
+}
+
+.icons{
+  margin: 0 10px;
+}

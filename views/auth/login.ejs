@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <div class="login-wrapper">
+      <div class="login-container">
+        <h1 class="login-title">Login</h1>
+
+        <form action="/login" method="POST" class="login-form">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-input"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit" class="form-btn">Login</button>
+        </form>
+        <div class="forg">
+          <a href="/forget-password" class="forgotp">Forgot Password</a>
+        </div>
+
+        <% if(errors || errors.length > 0){ %>
+        <p class="err"><%=errors%></p>
+        <% } %>
+        <div class="actions">
+          <a href="/google" class="icons"
+            ><img src="https://www.google.com/favicon.ico" alt="Google Icon" />
+          </a>
+          <a href="" class="icons"
+            ><img src="https://github.githubassets.com/favicons/favicon.png"/>
+          </a>
+          <a href="" class="icons">
+            <img src="https://www.facebook.com/favicon.ico" width="30px" />
+            
+          </a>
+        </div>
+
+        <p class="login-footer">
+          Don’t have an account?
+          <a href="/register" class="footer-link">Register</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

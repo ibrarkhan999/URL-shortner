@@ -1,0 +1,66 @@
+<!-- profile.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile </title>
+  <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+
+  <main class="profile-wrapper">
+    
+    <!-- Profile Card -->
+    <div class="mainnn">
+    <section class="profile-card">
+      <div class="profile-avatar">
+        <img src="https://picsum.photos/200" alt="avatar" class="avatar-img">
+      </div>
+      <div class="profile-details">
+        <h1 class="profile-name"><%= user.name %></h1>
+        <p class="profile-email"><%= user.email %></p>
+        <p class="profile-joined">Member Since: 
+          <%= new Date(user.createdAt).toLocaleDateString() %>
+        </p>
+      </div>
+ 
+    </section>
+     <div class="profileVarification">
+        <span class="verification-label">Email Verification</span>
+      <%  if(user.isValidEmail){  %>
+          <span class="green">Verified</span>
+      <%  }else{  %>
+          <span class="red">Not Verified</span>
+          <a href="/verify-email" class="vf td">Verify Now</a>
+      <%  } %>
+      </div>
+
+      </div>
+    <!-- Stats Section -->
+    <section class="profile-stats">
+      <div class="stat-card">
+        <div class="stat-number"><%=allShortLinks ? allShortLinks.length:0%></div>
+        <div class="stat-label">Links Created</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Total Clicks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Today</div>
+        <div class="stat-label">Last Active</div>
+      </div>
+    </section>
+
+<!-- Actions -->
+<section class="profile-actions">
+  <a href="/edit-profile/<%= user.id %>" class="btn btn-edit">Edit Profile</a>
+  <a href="/change-password/<%= user.id %>" class="btn btn-password">Change Password</a>
+  <a href="/logout" class="btn btn-logout">Logout</a>
+</section>
+
+  </main>
+</body>
+</html>

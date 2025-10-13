@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+  <link rel="stylesheet" href="/verifyEmail.css">
+</head>
+<body>
+      <%- include('./partials/header.ejs') %>
+  <div class="verify-container">
+    <h1>Email Verification</h1>
+    <p>We’ve sent a verification code to <b><%= email %></b></p>
+    <form method="get" action="/verify-email-token">
+        
+      <input type="hidden" name="email" value="<%=email%>" required />
+      <input type="text" name="token" placeholder="Enter your code" required />
+      <button type="submit">Verify</button>
+    </form>
+    <form action="/resend-verification-link" method="POST">
+      <button>Resend Verification Link</button>
+    </form>
+
+  </div>
+</body>
+</html>

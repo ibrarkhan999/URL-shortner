@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header</title>
+  <link rel="stylesheet" href="/header.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">URL SHORTNER</a>
+      <ul class="navbar-menu">
+        <li class="navbar-item"><a href="/" class="navbar-link">Home</a></li>
+
+      <%  if(user){   %>
+        <li class="navbar-item"><a href="/urlshortner" class="navbar-link">URL Shortner</a></li>
+        <li class="navbar-item"><a href="/profile" class="navbar-link">Profile</a></li>
+        <li class="navbar-item"><a href="/logout" class="navbar-link">Logout</a></li>
+
+      <%  }else{    %>
+        <li class="navbar-item"><a href="/login" class="navbar-link">Login</a></li>
+        <li class="navbar-item"><a href="/register" class="navbar-link">Sign Up</a></li>
+      <%  }   %>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

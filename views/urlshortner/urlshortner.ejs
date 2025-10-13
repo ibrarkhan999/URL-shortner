@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="/urlshortner.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <main class="main">
+      <div class="container">
+        <h1 class="title">URL Shortener</h1>
+
+        <!-- Form -->
+        <form action="/urlshortner" method="POST" class="url-form">
+          <label for="url" class="form-label">Enter URL:</label>
+          <input type="url" id="url" name="url" class="form-input" required />
+
+          <label for="shortCode" class="form-label">Enter Short Code:</label>
+          <input type="text" id="shortCode" name="shortCode" required class="form-input" />
+
+          <button type="submit" id="btn" class="form-btn">Shorten</button>
+        </form>
+
+        <!-- List -->
+        <h2 class="subtitle">Shortened URLs</h2>
+        <ul class="url-list">
+          <% links.map(({ shortCode, url,id }) => { %>
+            <li class="url-item">
+              <span class="url-original"><%= url %></span>
+              <a href="/urlshortner/<%= shortCode %>" target="_blank" class="url-short">
+                <%= host %>/<%= shortCode %>
+              </a>
+              <div class="extra">
+                <a class="atag" href="/edit/<%=id%>">✏️</a>
+                <a class="atag" href="/delete/<%=id%>">❌</a>
+
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
